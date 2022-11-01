@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "api/v1/usuarios")
 public class UsuarioController {
 
-    private final UsuarioService usuarioService;
+    private final UsuarioService    usuarioService;
 
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
@@ -50,7 +50,7 @@ public class UsuarioController {
         }
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@RequestBody Long id) {
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         try {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body(usuarioService.delete(id));
         } catch (Exception e){

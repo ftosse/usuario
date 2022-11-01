@@ -14,14 +14,14 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Getter
 @Setter
-//@Audited
+@Audited
 public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name= "name")
+    @Column(name= "name", length = 20)
     private String name;
-    @Column(name= "email")
+    @Column(name= "email",length = 40,unique = true)
     private String email;
     @Column(name= "password")
     private String password;

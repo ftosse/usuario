@@ -57,7 +57,7 @@ public class UsuarioService implements BaseService<Usuario>{
         try{
             Optional<Usuario> entityOptional = usuarioRepository.findById(id);
             Usuario usuario = entityOptional.get();
-            usuario = usuarioRepository.save(usuario);
+            usuario = usuarioRepository.save(entity);
             return usuario;
         } catch (Exception e){
             throw new Exception(e.getMessage());
